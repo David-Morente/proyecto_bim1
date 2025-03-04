@@ -8,6 +8,7 @@ import { dbConnection } from './mongo.js'
 import authRoutes from "./../src/auth/auth.routes.js"
 import userRoutes from "./../src/users/user.routes.js"
 import categoryRoutes from "./../src/category/category.routes.js"
+import productRoutes from "./../src/product/product.routes.js"
 import apiLimiter from "./../src/middlewares/validar-cant-peticiones.js"
 
 const middlewares = (app) => {
@@ -37,6 +38,7 @@ const routes = (app) => {
     app.use("/storeSystem/v1/auth", authRoutes)
     app.use("/storeSystem/v1/user", userRoutes)
     app.use("/storeSystem/v1/category", categoryRoutes)
+    app.use("/storeSystem/v1/product", productRoutes)
 }
 
 const conectarDB = async () => {

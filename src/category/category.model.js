@@ -1,10 +1,10 @@
 import {Schema, model} from "mongoose"
 
 const categorySchema = Schema({
-    nameCategory:{
+    categoryName:{
         type: String,
-        required: [true, "Name category is required"],
-        maxLength:[25, "Name category cannot exceed 25 characters"]
+        required: [true, "Category name is required"],
+        maxLength:[25, "Category name cannot exceed 25 characters"]
     },
     description:{
         type: String,
