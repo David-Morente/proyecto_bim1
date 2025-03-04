@@ -16,3 +16,28 @@ export const loginValidator = [
     body("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
     validarCampos
 ]
+
+export const getUserByIdValidator = [
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    validarCampos
+]
+
+export const deleteUserValidator = [
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    validarCampos
+]
+
+export const updatePasswordValidator = [
+    param("uid").isMongoId().withMessage("No es un ID válido"),
+    param("uid").custom(userExists),
+    body("newPassword").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres"),
+    validarCampos
+]
+
+export const updateUserValidator = [
+    param("uid", "No es un ID válido").isMongoId(),
+    param("uid").custom(userExists),
+    validarCampos
+]
