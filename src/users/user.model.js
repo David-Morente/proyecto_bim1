@@ -27,6 +27,9 @@ const userSchema = Schema({
         required: [true, "Email is required"],
         unique: true
     },
+    preferences:{
+        type: String
+    },
     role:{
         type: String,
         required: true,

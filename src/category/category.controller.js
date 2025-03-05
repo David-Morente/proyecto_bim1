@@ -70,7 +70,7 @@ export const deleteCategory = async(req, res) => {
     try{
         const { uid } = req. params
 
-        const category =  await Category.findByIdAndUpdate(uid, {status: false}, {new: true})
+        const category =  await Category.findByIdAndDelete(uid, {status: false}, {new: true})
 
         return res.status(200).json({
             success: true,

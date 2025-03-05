@@ -6,11 +6,6 @@ const productSchema = Schema({
         required: [true, "Product name is required"],
         maxLength:[25, "Product name cannot exceed 25 characters"]
     },
-    description:{
-        type: String,
-        required: [true, "Description is required"],
-        maxLength:[50, "Description cannot exceed 50 characters"]
-    },
     price:{
         type: Number,
         required: [true, "Price is required"]

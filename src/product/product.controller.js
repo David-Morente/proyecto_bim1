@@ -19,14 +19,15 @@ export const registerProduct = async (req, res) => {
 }
 
 export const listProducts = async (req, res) => {
-    try {
-        const { from = 0 } = req.query
-        const query = { status: true }
+    try{
+        const { limits = 10, from = 0} = req.query
+        const query = {status: true}
 
-        const { total, products } = await Promise.all([
+        const [ total, products ] = await Promise.all([
             Product.countDocuments(query),
             Product.find(query)
                 .skip(Number(from))
+                .limit(Number(limits))
         ])
 
         return res.status(200).json({
@@ -34,7 +35,8 @@ export const listProducts = async (req, res) => {
             total,
             products
         })
-    } catch (err) {
+
+    }catch(err){
         return res.status(500).json({
             success: false,
             message: "Error al listar los productos",
@@ -44,18 +46,25 @@ export const listProducts = async (req, res) => {
 }
 
 export const findProductById = async (req, res) => {
-    try {
-        const { uid } = req.params
-        const product = await Product
+    try{
+        const { uid } = req.params;
+        const product = await Product.findById(uid)
 
-        if (!product) {
-            res.status(404).json({
+        if(!product){
+            return res.status(404).json({
                 success: false,
                 message: "Producto no existe",
                 error: err.message
             })
         }
-    } catch (err) {
+
+        return res.status(200).json({
+            success: true,
+            product
+        })
+
+    } catch(err){
+        console.log(err)
         return res.status(500).json({
             success: false,
             message: "Error al obtener el producto",

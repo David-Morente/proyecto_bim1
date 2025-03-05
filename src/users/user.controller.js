@@ -1,5 +1,6 @@
 import { hash, verify } from "argon2"
 import User from "./user.model.js"
+import { body } from "express-validator";
 
 export const getUserById = async(req, res) => {
     try{
@@ -31,7 +32,7 @@ export const getUserById = async(req, res) => {
 
 export const getUsers = async(req, res) => {
     try{
-        const { limits = 3, from = 0} = req.query
+        const { limits = 10, from = 0} = req.query
         const query = {status: true}
 
         const [ total, users ] = await Promise.all([
@@ -125,16 +126,15 @@ export const updateUser = async (req, res) => {
         const { uid } = req.params;
         const  data  = req.body;
 
-        const user = await User.findByIdAndUpdate(uid, data, { new: true });
-
-        const validatePassword = await verify(user.password, data.password)
-
-        if(validatePassword){
-            return res.status(400).json({
+        if (data.user._id.toHexString() !== uid) {
+            return res.status(401).json({
                 success: false,
-                message: "Ingrese su contraseña actual para actualizar sus datos"
-            })
+                message: "No tienes permisos para actualizar este usuario"
+            });
         }
+
+        delete data.password
+        const user = await User.findByIdAndUpdate(uid, data, { new: true });
 
         res.status(200).json({
             success: true,
