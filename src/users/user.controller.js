@@ -1,6 +1,29 @@
 import { hash, verify } from "argon2"
+import argon2 from "argon2"
 import User from "./user.model.js"
-import { body } from "express-validator";
+
+export const initAdmin = async () => {
+    try {
+        const adminExist = await User.findOne({ role: 'ADMIN_ROLE' });
+        if (!adminExist) {
+            const hashedPassword = await argon2.hash('adminPassword07');
+            const admin = new User({
+                name: 'Admin',
+                surname: 'User',
+                email: 'admin@example.com',
+                password: hashedPassword,
+                phone: '12345678',
+                role: 'ADMIN_ROLE'
+            });
+            await admin.save();
+            console.log('Admin creado');
+        } else {
+            console.log('Admin ya existe');
+        }
+    } catch (error) {
+        console.error('Error al crear el admin:', error);
+    }
+};
 
 export const getUserById = async(req, res) => {
     try{
@@ -61,6 +84,13 @@ export const deleteUser = async (req, res) => {
     try{
         const { uid } = req. params
 
+        if (data.user._id.toHexString() !== uid) {
+            return res.status(401).json({
+                success: false,
+                message: "No tienes permisos para actualizar este usuario"
+            });
+        }
+
         const user =  await User.findByIdAndUpdate(uid, {status: false}, {new: true})
 
         return res.status(200).json({
@@ -82,6 +112,13 @@ export const updatePassword = async (req, res) => {
     try{
         const { uid } = req.params
         const { newPassword, oldPassword } =  req.body
+
+        if (data.user._id.toHexString() !== uid) {
+            return res.status(401).json({
+                success: false,
+                message: "No tienes permisos para actualizar este usuario"
+            });
+        }
 
         const user = await User.findById(uid)
 
@@ -126,6 +163,13 @@ export const updateUser = async (req, res) => {
         const { uid } = req.params;
         const  data  = req.body;
 
+        if (data.user && data.user.role && data.user.role !== "CLIENTE_ROLE") {
+            return res.status(400).json({
+                success: false,
+                message: "No puedes cambiar tu rol, solo un administrador puede hacerlo."
+            });
+        }
+
         if (data.user._id.toHexString() !== uid) {
             return res.status(401).json({
                 success: false,
@@ -149,3 +193,47 @@ export const updateUser = async (req, res) => {
         });
     }
 }
+
+export const updateAnyone = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const data = req.body;
+
+        const updatedUser = await User.findByIdAndUpdate(uid, data, { new: true });
+
+        res.status(200).json({
+            success: true,
+            msg: "Usuario Actualizado",
+            user: updatedUser,
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            msg: "Error al actualizar usuario",
+            error: err.message
+        });
+    }
+};
+
+export const deleteAnyone = async (req, res) => {
+    try{
+        const { uid } = req. params
+
+        const user =  await User.findByIdAndUpdate(uid, {status: false}, {new: true})
+
+        return res.status(200).json({
+            success: true,
+            message: "Usuario Eliminado",
+            user
+        })
+
+    }catch(err){
+        return res.status(500).json({
+            success: false,
+            message: "Error al eliminar el usuario",
+            error: err.message
+        })
+    }
+}
+
+initAdmin();
