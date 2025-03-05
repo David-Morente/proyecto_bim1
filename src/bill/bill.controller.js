@@ -1,6 +1,7 @@
 import Bill from "./bill.model.js"
 import Shopping from "../shoppingCart/shopping.model.js"
 import BillDetail from "../billDetail/billDetail.model.js"
+import Product from "../product/product.model.js"
 
 export const addBill = async (req, res) => {
     try {

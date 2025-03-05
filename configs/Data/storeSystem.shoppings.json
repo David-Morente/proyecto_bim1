@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "67c8db6f3fcc3e06543b6048"
+  },
+  "user": {
+    "$oid": "67c8d8833fcc3e06543b6012"
+  },
+  "product": {
+    "$oid": "67c8da873fcc3e06543b602d"
+  },
+  "quantity": 3,
+  "totalPrice": 7.5,
+  "status": false
+}]

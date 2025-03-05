@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "67c8da873fcc3e06543b602d"
+  },
+  "productName": "Arroz Integral",
+  "price": 2.5,
+  "category": {
+    "$oid": "67c8d9133fcc3e06543b6015"
+  },
+  "stock": 147,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8da993fcc3e06543b602f"
+  },
+  "productName": "Pasta Penne",
+  "price": 1.8,
+  "category": {
+    "$oid": "67c8d91e3fcc3e06543b6017"
+  },
+  "stock": 200,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8daa53fcc3e06543b6031"
+  },
+  "productName": "Aceite de Oliva",
+  "price": 5.99,
+  "category": {
+    "$oid": "67c8d9263fcc3e06543b6019"
+  },
+  "stock": 80,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8daac3fcc3e06543b6033"
+  },
+  "productName": "Lentejas",
+  "price": 1.2,
+  "category": {
+    "$oid": "67c8d9353fcc3e06543b601d"
+  },
+  "stock": 300,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dab23fcc3e06543b6035"
+  },
+  "productName": "Conservas de Atún",
+  "price": 3,
+  "category": {
+    "$oid": "67c8d92e3fcc3e06543b601b"
+  },
+  "stock": 100,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dab93fcc3e06543b6037"
+  },
+  "productName": "Cereal de Avena",
+  "price": 3.5,
+  "category": {
+    "$oid": "67c8d93c3fcc3e06543b601f"
+  },
+  "stock": 120,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dac13fcc3e06543b6039"
+  },
+  "productName": "Sal de Mar",
+  "price": 0.99,
+  "category": {
+    "$oid": "67c8d9433fcc3e06543b6021"
+  },
+  "stock": 250,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8daca3fcc3e06543b603b"
+  },
+  "productName": "Salsa de Tomate",
+  "price": 2,
+  "category": {
+    "$oid": "67c8d94b3fcc3e06543b6023"
+  },
+  "stock": 180,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dad13fcc3e06543b603d"
+  },
+  "productName": "Frutos Secos Mixtos",
+  "price": 4.5,
+  "category": {
+    "$oid": "67c8d9523fcc3e06543b6025"
+  },
+  "stock": 50,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dad93fcc3e06543b603f"
+  },
+  "productName": "Harina de Trigo",
+  "price": 1.8,
+  "category": {
+    "$oid": "67c8d9593fcc3e06543b6027"
+  },
+  "stock": 200,
+  "status": true
+}]

@@ -1,0 +1,155 @@
+[{
+  "_id": {
+    "$oid": "67c8d30e097ba1ed142966e9"
+  },
+  "name": "David",
+  "surname": "Morente",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$4QtjHvfTlx3pYC2oMORKnA$VWbXauh4CUSnnAqXKcowmXVpHtDnO3iXukUW9Q54p4c",
+  "phone": "34567890",
+  "email": "dmorente@example.com",
+  "preferences": "Me gustan las verduras",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d4d9766a3081f906fa20"
+  },
+  "name": "Admin",
+  "surname": "User",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$DznVFKQCUGE36hztq0mJrQ$hmHbX89VlLc10fICeRRlQca6LbYRKJiHsw3IBA6lyEs",
+  "phone": "12345678",
+  "email": "admin@example.com",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8283fcc3e06543b5ff7"
+  },
+  "name": "Ana",
+  "surname": "Pérez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$z8QFOO58WL641JPa1jOh2Q$NB8wNLpnLXjndGxFPwKr8L4Yj5hG7ONy4z5OQhmdcYI",
+  "phone": "12345678",
+  "email": "ana.perez@example.com",
+  "preferences": "Me gustan los deportes",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8383fcc3e06543b5ffa"
+  },
+  "name": "Carlos",
+  "surname": "García",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$w74FpVQtwZx4YsMjBhoctg$Ac3hlb3+dosZPRpzoS/ky+WpQEeWZLf2bfjjOFNLYIw",
+  "phone": "23456789",
+  "email": "carlos.garcia@example.com",
+  "preferences": "Prefiero la música",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d83e3fcc3e06543b5ffd"
+  },
+  "name": "Laura",
+  "surname": "López",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$DVyqCCGcvPN1n6pEDli2Bw$/NUNw1u6dy2X+64W5XKlsj9TqKr+41xU5BYkylExuok",
+  "phone": "34567890",
+  "email": "laura.lopez@example.com",
+  "preferences": "Me encantan los animales",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8483fcc3e06543b6000"
+  },
+  "name": "José",
+  "surname": "Martínez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$j1O040Us+wqqVmCoUecNig$ZUNsKGdecEGgRAgr06G39rzEjVOJ2SGy7BXPY/DdN4E",
+  "phone": "45678901",
+  "email": "jose.martinez@example.com",
+  "preferences": "Me gusta viajar",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8503fcc3e06543b6003"
+  },
+  "name": "Marta",
+  "surname": "Sánchez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8Qdj0b8kypTfyvS4Qc0S0g$f9us+Q23pvv4XbObXM7A1tQUif45Mt2iH6chC8umB5w",
+  "phone": "56789012",
+  "email": "marta.sanchez@example.com",
+  "preferences": "Soy fan de las películas",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d85d3fcc3e06543b6006"
+  },
+  "name": "Luis",
+  "surname": "Ramírez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$/4NL9ipoUZXqnpSai/XyJw$Ee2f3VL7g5leRpvjhuA2I3kv4tmnoB1jDhtwx2m8+Vo",
+  "phone": "67890123",
+  "email": "luis.ramirez@example.com",
+  "preferences": "Me gusta cocinar",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8633fcc3e06543b6009"
+  },
+  "name": "Clara",
+  "surname": "Gómez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$n1zwVU1s0n14z1jYeaa+Gg$PQHcJsTSXvU/t2HrWz884lxbe44s5q4plyfkSFaX4XE",
+  "phone": "78901234",
+  "email": "clara.gomez@example.com",
+  "preferences": "Me apasiona la lectura",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d86d3fcc3e06543b600c"
+  },
+  "name": "Sergio",
+  "surname": "Vega",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$MdcHo1WDhuFoIAkQTVIwzw$GYEZlBtMfsfH78XcnKDXVFaQK1HWSGLb1z27p16xOjo",
+  "phone": "89012345",
+  "email": "sergio.vega@example.com",
+  "preferences": "Disfruto del cine",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8753fcc3e06543b600f"
+  },
+  "name": "Paula",
+  "surname": "Díaz",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$m+qgvTIPLfwX46FOv+gyCA$9Kmq5gqmUb8hBXUuhJMpl41uJYShBtDYYlsGVRFKgfY",
+  "phone": "90123456",
+  "email": "paula.diaz@example.com",
+  "preferences": "Me gusta bailar",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d8833fcc3e06543b6012"
+  },
+  "name": "Rafael",
+  "surname": "Morales",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$rzj1JJRAXl2fFeNoog0jjQ$omSzxEnHQn9uhEfTQRyc6Ha0kt+1R38vvXf67Lxtb7s",
+  "phone": "12345098",
+  "email": "rafael.morales@example.com",
+  "preferences": "Me gusta la fotografía",
+  "role": "CLIENT_ROLE",
+  "status": true
+}]

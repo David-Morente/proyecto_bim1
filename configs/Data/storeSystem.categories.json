@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "67c8d9133fcc3e06543b6015"
+  },
+  "categoryName": "Arroz",
+  "description": "Diferentes tipos de arroz para cocinar.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d91e3fcc3e06543b6017"
+  },
+  "categoryName": "Pasta",
+  "description": "Variedades de pasta para platos italianos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d9263fcc3e06543b6019"
+  },
+  "categoryName": "Aceite",
+  "description": "Aceites para cocinar o aderezar alimentos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d92e3fcc3e06543b601b"
+  },
+  "categoryName": "Conservas",
+  "description": "Alimentos enlatados para larga duración.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d9353fcc3e06543b601d"
+  },
+  "categoryName": "Legumbres",
+  "description": "Frijoles, lentejas y garbanzos para cocinar.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d93c3fcc3e06543b601f"
+  },
+  "categoryName": "Cereales",
+  "description": "Cereales para desayuno y otros usos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d9433fcc3e06543b6021"
+  },
+  "categoryName": "Especias",
+  "description": "Condimentos para dar sabor a tus platos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d94b3fcc3e06543b6023"
+  },
+  "categoryName": "Salsas",
+  "description": "Salsas para acompañar tus comidas.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d9523fcc3e06543b6025"
+  },
+  "categoryName": "Frutos secos",
+  "description": "Almendras, nueces y otros frutos secos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8d9593fcc3e06543b6027"
+  },
+  "categoryName": "Harina",
+  "description": "Harinas para panadería y repostería.",
+  "status": true
+}]
