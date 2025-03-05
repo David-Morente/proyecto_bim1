@@ -11,6 +11,7 @@ import categoryRoutes from "./../src/category/category.routes.js"
 import productRoutes from "./../src/product/product.routes.js"
 import shoppingCartRoutes from "./../src/shoppingCart/shopping.routes.js"
 import billRoutes from "./../src/bill/bill.routes.js"
+import billDetailRoutes from "./../src/billDetail/billDetail.routes.js"
 import apiLimiter from "./../src/middlewares/validar-cant-peticiones.js"
 
 const middlewares = (app) => {
@@ -43,6 +44,7 @@ const routes = (app) => {
     app.use("/storeSystem/v1/product", productRoutes)
     app.use("/storeSystem/v1/bill", billRoutes)
     app.use("/storeSystem/v1/cart", shoppingCartRoutes)
+    app.use("/storeSystem/v1/billDetail", billDetailRoutes)
 }
 
 const conectarDB = async () => {

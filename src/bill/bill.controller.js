@@ -29,6 +29,15 @@ export const addBill = async (req, res) => {
             path: "product",
             select: "productName price stock"
         });
+
+        //Validar stock en tienda
+        for (const item of cart) {
+            if (item.quantity > item.product.stock) {
+                return res.status(400).json({
+                    message: `No hay suficiente stock de ${item.product.productName}`
+                })
+            }
+        }
         
         for (const item of cart) {
             bill.total += item.totalPrice
@@ -44,6 +53,11 @@ export const addBill = async (req, res) => {
             }
 
             await BillDetail.create(detail);
+
+            // Restar compra al stock
+            await Product.findByIdAndUpdate(item.product._id,
+                { stock: item.product.stock - item.quantity },
+                { new: true });
         }
 
         // Actualizar total factura
@@ -77,24 +91,44 @@ export const listBillByClient = async (req, res) => {
             });
         }
 
+        // Obtener facturas del cliente
         const bills = await Bill.find({ user: uid_client, status: true })
-            .populate({ path: "user", select: "name email" })
-            .populate({ 
-                path: "_id", 
-                populate: {
-                    path: "billDetails",
-                    select: "product quantity totalPrice status"
-                }
+        .populate({
+            path: "user",
+            select: "name email"
+        });
+
+        // Obtener detalles de la factura
+        const billsWithDetails = await Promise.all(
+            bills.map(async (bill) => {
+
+            const details = await BillDetail.find({ bill: bill._id.toHexString() })
+            .populate({
+                path: "product",
+                select: "productName price"
             });
+
+            const detailParsed = details.map((detail) => ({
+                uid_detail: detail._id,
+                productName: detail.product.productName, 
+                price: detail.price, 
+                quantity: detail.quantity, 
+                subtotal: detail.subtotal
+            }));
+        
+            return {
+                uid: bill._id,
+                user_name: bill.user.name,
+                user_email: bill.user.email,
+                user_uid: bill.user._id,
+                date: bill.date,
+                detail: detailParsed
+            };
+        }));
 
         return res.status(200).json({
             success: true,
-            bills: bills.map(bill => ({
-                nombre: bill.user.name,
-                uid: bill.user._id,
-                fecha: bill.date,
-                detalle: bill.billDetails
-            }))
+            billsWithDetails
         });
     } catch (err) {
         return res.status(500).json({
@@ -103,3 +137,5 @@ export const listBillByClient = async (req, res) => {
         });
     }
 };
+
+
